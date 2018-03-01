@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ED-AZ-AYa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HiraginoMaruGothProN.ttc">
+            <string>HiraMaruProN-W4</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="zAT-wH-id3">
+            <objects>
+                <navigationController id="3ED-AZ-AYa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mJ2-1e-7Qu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4IA-qt-qse" kind="relationship" relationship="rootViewController" id="rUR-Gg-q8B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76d-EK-Vqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1049" y="33"/>
+        </scene>
+        <!--Edit Geo Json View Controller-->
+        <scene sceneID="hWY-TN-7di">
+            <objects>
+                <viewController id="4IA-qt-qse" customClass="EditGeoJsonViewController" customModule="GeoJsonGMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0in-c0-4BM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d7F-wa-XJD">
+                                <rect key="frame" x="16" y="84" width="343" height="421"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNY-pZ-AJd">
+                                <rect key="frame" x="67" y="599" width="241" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Eyl-h0-gdA"/>
+                                    <constraint firstAttribute="width" constant="241" id="bZo-Ol-0sf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <state key="normal" title="Render">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedRenderButton:" destination="4IA-qt-qse" eventType="touchUpInside" id="Dab-no-Y5m"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="8Td-zv-Nyp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-9g-PZp">
+                                <rect key="frame" x="67" y="535" width="241" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="Yuh-Ha-gWe"/>
+                                    <constraint firstAttribute="height" constant="48" id="hKg-9v-UKk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <state key="normal" title="Bearingの計算">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qBb-Hn-GfI" kind="show" id="ax4-X2-dXJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zNY-pZ-AJd" firstAttribute="centerX" secondItem="U1X-XR-8q0" secondAttribute="centerX" id="A43-zb-SR1"/>
+                            <constraint firstItem="Va5-9g-PZp" firstAttribute="centerX" secondItem="U1X-XR-8q0" secondAttribute="centerX" id="MGM-a4-FzM"/>
+                            <constraint firstItem="Va5-9g-PZp" firstAttribute="top" secondItem="d7F-wa-XJD" secondAttribute="bottom" constant="30" id="WTs-3L-wP8"/>
+                            <constraint firstItem="d7F-wa-XJD" firstAttribute="top" secondItem="U1X-XR-8q0" secondAttribute="top" constant="20" id="dac-UN-OLQ"/>
+                            <constraint firstItem="U1X-XR-8q0" firstAttribute="bottom" secondItem="zNY-pZ-AJd" secondAttribute="bottom" constant="20" id="gHj-jA-EVo"/>
+                            <constraint firstItem="zNY-pZ-AJd" firstAttribute="top" secondItem="Va5-9g-PZp" secondAttribute="bottom" constant="16" id="gZT-cv-zIe"/>
+                            <constraint firstItem="U1X-XR-8q0" firstAttribute="trailing" secondItem="d7F-wa-XJD" secondAttribute="trailing" constant="16" id="lvt-Nj-Jlr"/>
+                            <constraint firstItem="d7F-wa-XJD" firstAttribute="leading" secondItem="U1X-XR-8q0" secondAttribute="leading" constant="16" id="sRD-fl-JvX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U1X-XR-8q0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="emF-QU-CGm"/>
+                    <connections>
+                        <outlet property="jsonTextView" destination="d7F-wa-XJD" id="sun-Ei-ClG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uq4-Xg-Pmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274.39999999999998" y="32.833583208395808"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GeoJsonGMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="33"/>
+        </scene>
+        <!--Map Web View Controller-->
+        <scene sceneID="cmA-2j-m5h">
+            <objects>
+                <viewController id="qBb-Hn-GfI" customClass="MapWebViewController" customModule="GeoJsonGMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YR5-ZV-1ON">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="MYa-HV-oEa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28z-JG-g6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="788"/>
+        </scene>
+    </scenes>
+</document>
